@@ -2,6 +2,8 @@ package com.example.newsreader.Model
 
 class Source {
 
+    var id:String?=null
+    var name:String?=null
     var author:String?=null
     var title:String?=null
     var description:String?=null

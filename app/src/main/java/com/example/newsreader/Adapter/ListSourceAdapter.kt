@@ -1,11 +1,11 @@
 package com.example.newsreader.Adapter
 
 import android.content.Context
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.recyclerview.widget.RecyclerView
 import com.android.customitemview.R
 import com.example.newsreader.Adapter.ViewHolder.ListSourceViewHolder
 import com.example.newsreader.Interface.ItemClickListener
@@ -23,15 +23,14 @@ class ListSourceAdapter(private val context: Context,private val webSite: WebSit
         return webSite.sources!!.size
     }
 
-    override fun onBindViewHolder(holder: ListSourceViewHolder?, position: Int) {
+    override fun onBindViewHolder(holder: ListSourceViewHolder, position: Int) {
         holder!!.source_title.text = webSite.sources!![position].name
 
-        holder.setItemClickListener(object : ItemClickListener)
+        holder.setItemClickListener(object : ItemClickListener
         {
             override fun onClick(view: View, position: Int) {
                 Toast.makeText(context, "Will be implement in next tutorial",Toast.LENGTH_SHORT).show()
             }
-        }
+        })
     }
-
 }
